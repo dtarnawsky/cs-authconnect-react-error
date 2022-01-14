@@ -1,0 +1,7 @@
+{
+  "name": "loginPleaseWork",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
