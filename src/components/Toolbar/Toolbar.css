@@ -1,0 +1,36 @@
+ion-toolbar {
+  --min-height: 40px;
+}
+
+ion-toolbar .sc-ion-searchbar-md-h {
+  padding-bottom: 8px;
+}
+
+.menu-button {
+  --color: #e1b825;
+  color: #e1b825;
+  background-color: transparent;
+  padding: 0;
+  font-size: 24px;
+}
+
+.menu-button:hover {
+  color: #e1b825;
+}
+
+.menu-button.activated {
+  background-color: transparent;
+}
+
+.toolbar {
+  --background: #002a61;
+}
+
+.toolbar-title {
+  --color: #51b5e4;
+}
+
+.toolbar-logo {
+  margin-top: 8px;
+  height: 20px;
+}

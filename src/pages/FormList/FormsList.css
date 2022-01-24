@@ -1,0 +1,90 @@
+ion-toggle {
+    zoom: 0.65;
+}
+
+ion-card {
+    margin: 10px 0px 8px;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+ion-content {
+    --background: #8ea5ba;
+}
+
+ion-list {
+    --background: #8ea5ba;
+    padding: 0 !important;
+    margin-top: 5px !important;
+}
+
+ion-item {
+    --background: #8ea5ba;
+    padding: 0px !important;
+    border: none !important;
+}
+
+ion-card-header {
+    padding: 8px 12px;
+}
+
+ion-card-content {
+    background-color: #e0e5ee;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    height: 32px;
+}
+
+.toggle {
+    --background:#adadad !important;
+    --background-checked:#e1b825 !important;
+}
+
+.header {
+    --ion-background-color: #002a61;
+}
+
+.toolbar-logo {
+    margin-top: 8px;
+    height: 20px;
+}
+
+.header-title {
+    --color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.searchbar {
+    --ion-background-color: #fff;
+    --border-radius: 20px;
+}
+
+.searchbar-search-icon.sc-ion-searchbar-md {
+    height: 20px;
+    top: 6px;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+    line-height: 20px;
+}
+
+.sync-icon {
+    height: 20px;
+    width: 20px;
+    fill: #fff;
+    margin-right: 10px;
+}
+
+.expand-icon {
+    height: 12px;
+    width: 12px;
+    margin-top: 5px;
+    margin-right: 5px;
+}

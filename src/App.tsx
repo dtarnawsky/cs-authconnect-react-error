@@ -1,7 +1,10 @@
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { useEffect, useMemo } from 'react';
+import { IonApp, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+
+import AuthConnectContainer from './components/AuthConnectProvider/AuthConnectProvider';
+import { getStorageKeyFromVault, createVault } from './Vault/Vault.service';
+import { VaultContextProvider } from './Vault/VaultContext';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,19 +27,32 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  // Initialize vault object
+  const vault = useMemo(() => createVault(), []);
+
+  // Initialize the Vault, Database, and repositories on start of app
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-extra-semi
+    ;(async () => {
+      // Initialize repositories
+        // setTimeout(async () => {
+          const key = await getStorageKeyFromVault(vault);
+          console.log(`App Key 1: ${key}`);
+        // }, 10000);
+    })();
+
+  },[vault]);
+
+  return (
+    <VaultContextProvider vault={vault}>
+      <IonApp>
+        <IonReactRouter>
+          <AuthConnectContainer /> 
+        </IonReactRouter>
+      </IonApp>  
+    </VaultContextProvider>
+  );
+};
 
 export default App;
